@@ -17,8 +17,19 @@ If you'd like to contribute to this project, please fork this repository and sub
 Operation Refactor America is a not associated with any government agency, but our goal is to empower citizens with transparent data. Only a fraction of government agencies provide public APIs, which are usually poorly documented, built on archaic REST architecture, and contains scattered data. Our mission is to retrieve that valuable data and convert them into an intuitive and modern API using GraphQL Server.
 
 ## About the Data
-The data comes directly from the National Center of Health Statistic's REST API. The REST endpoints have been mapped as GraphQL types and resolvers. A summary of endpoints and documentation can be found here: 
+The data comes directly from the National Center of Health Statistic's REST API. The REST endpoints have been mapped as GraphQL types and resolvers. A summary of endpoints and documentation can be found here:
+
+**Injury Mortality**
 https://dev.socrata.com/foundry/data.cdc.gov/6j4j-ispt
+
+**Death Rates And Life Expectancy At Birth**
+https://dev.socrata.com/foundry/data.cdc.gov/bgqx-uh4z
+
+**Leading Cause Of Death:**
+https://dev.socrata.com/foundry/data.cdc.gov/u4d7-xz8k
+
+**Age-Adjusted Death Rates For Selected Major Causes Of Death**
+https://dev.socrata.com/foundry/data.cdc.gov/p2s2-23ze
 
 **Note: Maximum of 10 requests per second or "experience degraded performance and may be blocked entirely"**
 
