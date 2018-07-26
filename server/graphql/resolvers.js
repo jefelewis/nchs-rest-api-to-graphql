@@ -161,6 +161,25 @@ const RESOLVERS = {
 
     // POTENTIALLY EXCESS DEATHS FROM FIVE LEADING CAUSES OF DEATH
     // https://data.cdc.gov/resource/78p9-mpg4.json
+
+
+    // CHRONIC DISEASE INDICATORS
+    // https://data.cdc.gov/resource/g4ie-h725.json
+    // https://data.cdc.gov/resource/g4ie-h725.json?locationdesc=California
+
+
+    // TEEN BIRTH TRENDS
+    // https://data.cdc.gov/resource/sgfp-ytm5.json
+
+
+    // Births to Unmarried Women by Age Group
+    // https://data.cdc.gov/resource/fvae-a8ai.json
+
+
+    // Childhood Mortality Rates
+    // https://data.cdc.gov/resource/uumi-wks2.json
+
+
   }
 }
 
