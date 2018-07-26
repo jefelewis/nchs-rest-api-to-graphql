@@ -9,6 +9,22 @@ const TYPEDEFS = `
     getDeathsByPoisoning: [Death]
     getDeathsByMotorVehicles: [Death]
     getDeathsByCutPierce: [Death]
+
+    getAllLifeExpectancy: [LifeExpectancy]
+    getLifeExpectancyByYear: [LifeExpectancy]
+    getLifeExpectancyByRace: [LifeExpectancy]
+    getLifeExpectancyBySex: [LifeExpectancy]
+    getLifeExpectancyByAverageLifeExpectancy: [LifeExpectancy]
+    getLifeExpectancyByMortalility: [LifeExpectancy]
+
+    getAllLeadingCauseOfDeath: [LeadingCauseOfDeath]
+    getLeadingCausesOfDeathByYear: [LeadingCauseOfDeath]
+    getLeadingCausesOfDeathBy113CauseName: [LeadingCauseOfDeath]
+    getlLeadingCausesOfDeathByCauseName: [LeadingCauseOfDeath]
+    getlLeadingCausesOfDeathByState: [LeadingCauseOfDeath]
+    getlLeadingCausesOfDeathByDeaths: [LeadingCauseOfDeath]
+    getlLeadingCausesOfDeathByAgeAdjustedDeathRate: [LeadingCauseOfDeath]
+
   }
 
   type Death {
@@ -28,6 +44,22 @@ const TYPEDEFS = `
     race: String
     sex: String
     unit: String
+    year: String
+  }
+
+  type LifeExpectancy {
+    mortality: String
+    race: String
+    sex: String
+    year: String
+  }
+
+  LeadingCauseOfDeath {
+    _113_cause_name: String
+    aadr: String
+    cause_name: String
+    deaths: String
+    state: String
     year: String
   }
 `;
