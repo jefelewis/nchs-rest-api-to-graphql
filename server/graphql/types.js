@@ -122,6 +122,13 @@ const TYPEDEFS = `
     birth_number: String
     year: String
   }
+
+  type ChildhoodMortalityRate {
+    age_at_death: String
+    mortality_rate: String
+    year: String
+  }
+
 `;
 
 

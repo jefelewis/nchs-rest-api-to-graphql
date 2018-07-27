@@ -262,6 +262,9 @@ const RESOLVERS = {
       .then((response) => response.data)
       .catch((error) => console.log(error))
     },
+
+
+    
   }
 }
 
