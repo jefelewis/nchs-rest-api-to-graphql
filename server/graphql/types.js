@@ -39,7 +39,9 @@ const TYPEDEFS = `
 
     getAllTeenBirths: [TeenBirth]
     getTeenBirthsByState(state: String): [TeenBirth]
-    getTeenBirthsByYearRange(yearStart: String, yearEnd: String): [TeenBirth]
+    getTeenBirthsByYearRange(yearStart: String yearEnd: String): [TeenBirth]
+
+    getAllUnmarriedBirths: [UnmarriedBirth]
 
   }
 
@@ -112,8 +114,11 @@ const TYPEDEFS = `
     year: String
   }
 
-
-
+  type UnmarriedBirth {
+    age_group: String
+    birth_number: String
+    year: String
+  }
 `;
 
 

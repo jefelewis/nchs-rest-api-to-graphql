@@ -232,11 +232,19 @@ const RESOLVERS = {
     },
 
 
-    // Births to Unmarried Women by Age Group
-    // https://data.cdc.gov/resource/fvae-a8ai.json
+
+    // BIRTHS TO UNMARRIED WOMEN
+    // Get All Unmarried Births
+    getAllUnmarriedBirths: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/fvae-a8ai.json`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
 
 
-    // Childhood Mortality Rates
+
+    // CHILDHOOD MORTALITY RATES
+    // Get All Childhood Mortality Rates
     // https://data.cdc.gov/resource/uumi-wks2.json
 
 
