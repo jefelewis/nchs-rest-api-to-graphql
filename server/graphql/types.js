@@ -37,6 +37,12 @@ const TYPEDEFS = `
     getExcessDeathsByAgeRange(ageRange: String): [ExcessDeath]
     getExcessDeathsByLocality(locality: String): [ExcessDeath]
 
+    getAllAlcoholBingeDrinking: [AlcoholBingeDrinking]
+    getAlcoholBingeDrinkingByGender: [AlcoholBingeDrinking]
+    getAlcoholBingeDrinkingByRaceEthnicty: [AlcoholBingeDrinking]
+    getAlcoholBingeDrinkingByState(stateAbbreviation: String): [AlcoholBingeDrinking]
+
+
     getAllTeenBirths: [TeenBirth]
     getTeenBirthsByState(state: String): [TeenBirth]
     getTeenBirthsByYearRange(yearStart: String yearEnd: String): [TeenBirth]
@@ -106,6 +112,32 @@ const TYPEDEFS = `
     year: String
   }
 
+  type AlcoholBingeDrinking {
+    lowconfidencelimit: String
+    stratificationid1: String
+    datavaluetypeid: String
+    datavaluefootnote: String
+    stratificationcategoryid1: String
+    yearend: String
+    highconfidencelimit: String
+    locationdesc: String
+    stratification1: String
+    topicid: String
+    datavalueunit: String
+    datavalue: String
+    datavaluefootnotesymbol: String
+    datavaluetype: String
+    questionid: String
+    question: String
+    locationabbr: String
+    stratificationcategory1: String
+    datasource: String
+    datavaluealt: String
+    locationid: String
+    topic: String
+    yearstart: String
+  }
+
   type TeenBirth {
     age_years: String
     state: String
@@ -128,6 +160,7 @@ const TYPEDEFS = `
     mortality_rate: String
     year: String
   }
+
 
 `;
 

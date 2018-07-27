@@ -206,10 +206,30 @@ const RESOLVERS = {
 
 
     // CHRONIC DISEASE INDICATORS
-    // https://data.cdc.gov/resource/g4ie-h725.json
-    // https://data.cdc.gov/resource/g4ie-h725.json?locationdesc=California
-
-
+    // Get All Alcohol Binge Drinking
+    getAllAlcoholBingeDrinking: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/g4ie-h725.json?topic=Alcohol`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
+    // Get Alcohol Binge Drinking by Gender
+    getAlcoholBingeDrinkingByGender: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/g4ie-h725.json?stratificationcategory1=Gender`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
+    // Get Alcohol Binge Drinking by Race/Ethnicity
+    getAlcoholBingeDrinkingByRaceEthnicty: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/g4ie-h725.json?stratificationcategory1=Race/Ethnicity`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
+    // Get Alcohol Binge Drinking by State
+    getAlcoholBingeDrinkingByState: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/g4ie-h725.json?locationabbr=${args.stateAbbreviation}`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
 
 
 
@@ -264,7 +284,7 @@ const RESOLVERS = {
     },
 
 
-    
+
   }
 }
 
