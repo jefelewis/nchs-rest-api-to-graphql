@@ -42,7 +42,6 @@ const TYPEDEFS = `
     getAlcoholBingeDrinkingByRaceEthnicty: [AlcoholBingeDrinking]
     getAlcoholBingeDrinkingByState(stateAbbreviation: String): [AlcoholBingeDrinking]
 
-
     getAllTeenBirths: [TeenBirth]
     getTeenBirthsByState(state: String): [TeenBirth]
     getTeenBirthsByYearRange(yearStart: String yearEnd: String): [TeenBirth]
@@ -160,8 +159,6 @@ const TYPEDEFS = `
     mortality_rate: String
     year: String
   }
-
-
 `;
 
 
