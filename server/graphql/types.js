@@ -11,32 +11,35 @@ const TYPEDEFS = `
     getDeathsByCutPierce: [Death]
 
     getAllLifeExpectancy: [LifeExpectancy]
-    getLifeExpectancyByYear: [LifeExpectancy]
-    getLifeExpectancyByRace: [LifeExpectancy]
-    getLifeExpectancyBySex: [LifeExpectancy]
-    getLifeExpectancyByAverageLifeExpectancy: [LifeExpectancy]
-    getLifeExpectancyByMortalility: [LifeExpectancy]
+    getLifeExpectancyByYear(year: String): [LifeExpectancy]
+    getLifeExpectancyByRace(race: String): [LifeExpectancy]
+    getLifeExpectancyBySex(sex: String): [LifeExpectancy]
+    getLifeExpectancyByAverageLifeExpectancy(averageLifeExpectancy: String): [LifeExpectancy]
+    getLifeExpectancyByMortalility(mortality: String): [LifeExpectancy]
 
-    getAllLeadingCauseOfDeath: [LeadingCauseOfDeath]
-    getLeadingCausesOfDeathByYear: [LeadingCauseOfDeath]
-    getLeadingCausesOfDeathBy113CauseName: [LeadingCauseOfDeath]
-    getLeadingCausesOfDeathByCauseName: [LeadingCauseOfDeath]
-    getLeadingCausesOfDeathByState: [LeadingCauseOfDeath]
-    getLeadingCausesOfDeathByDeaths: [LeadingCauseOfDeath]
-    getLeadingCausesOfDeathByAgeAdjustedDeathRate: [LeadingCauseOfDeath]
+    getAllLeadingCausesOfDeath: [LeadingCauseOfDeath]
+    getLeadingCausesOfDeathByYear(year: String): [LeadingCauseOfDeath]
+    getLeadingCausesOfDeathBy113CauseName(causeOfDeath: String): [LeadingCauseOfDeath]
+    getLeadingCausesOfDeathByCauseName(causeOfDeath: String): [LeadingCauseOfDeath]
+    getLeadingCausesOfDeathByState(state: String): [LeadingCauseOfDeath]
+    getLeadingCausesOfDeathByDeaths(deaths: String): [LeadingCauseOfDeath]
+    getLeadingCausesOfDeathByAgeAdjustedDeathRate(String: ageAdjustedDeathRate): [LeadingCauseOfDeath]
 
     getAllDeathRates: [DeathRate]
-    getDeathRateByCause: [DeathRate]
-    getlDeathRateByYear: [DeathRate]
-    getlDeathRateByAgeAdjustedDeathRate: [DeathRate]
+    getDeathRateByCause(causeOfDeath: String): [DeathRate]
+    getlDeathRateByYear(year: String): [DeathRate]
+    getlDeathRateByAgeAdjustedDeathRate(ageAdjustedDeathRate: String): [DeathRate]
 
     getAllExcessDeaths: [ExcessDeath]
-    getExcessDeathsByYear: [ExcessDeath]
-    getExcessDeathsByCauseOfDeath: [ExcessDeath]
-    getExcessDeathsByState: [ExcessDeath]
-    getExcessDeathsByAgeRange: [ExcessDeath]
-    getExcessDeathsByLocality: [ExcessDeath]
+    getExcessDeathsByYear(year: String): [ExcessDeath]
+    getExcessDeathsByCauseOfDeath(causeOfDeath: String): [ExcessDeath]
+    getExcessDeathsByState(state: String): [ExcessDeath]
+    getExcessDeathsByAgeRange(ageRange: String): [ExcessDeath]
+    getExcessDeathsByLocality(locality: String): [ExcessDeath]
 
+    getAllTeenBirths: [TeenBirth]
+    getTeenBirthsByState(state: String): [TeenBirth]
+    getTeenBirthsByYearRange(yearStart: String, yearEnd: String): [TeenBirth]
 
   }
 
@@ -95,6 +98,17 @@ const TYPEDEFS = `
     potentially_excess_deaths: String
     state: String
     state_fips_code: String
+    year: String
+  }
+
+  type TeenBirth {
+    age_years: String
+    state: String
+    state_births: String
+    state_rate: String
+    u_s_birth_rate: String
+    u_s_births: String
+    unit: String
     year: String
   }
 

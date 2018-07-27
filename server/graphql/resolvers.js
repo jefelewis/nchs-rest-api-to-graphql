@@ -107,13 +107,13 @@ const RESOLVERS = {
     },
     // Get Leading Causes of Death by 113 Cause Name
     getLeadingCausesOfDeathBy113CauseName: (parent, args) => {
-      return axios.get(`https://data.cdc.gov/resource/u4d7-xz8k.json?_113_cause_name=${args.causeName}`)
+      return axios.get(`https://data.cdc.gov/resource/u4d7-xz8k.json?_113_cause_name=${args.causeOfDeath}`)
       .then((response) => response.data)
       .catch((error) => console.log(error))
     },
     // Get Leading Causes of Death by Cause Name
     getLeadingCausesOfDeathByCauseName: (parent, args) => {
-      return axios.get(`https://data.cdc.gov/resource/u4d7-xz8k.json?_cause_name=${args.causeName}`)
+      return axios.get(`https://data.cdc.gov/resource/u4d7-xz8k.json?_cause_name=${args.causeOfDeath}`)
       .then((response) => response.data)
       .catch((error) => console.log(error))
     },
@@ -146,7 +146,7 @@ const RESOLVERS = {
     },
     // Get Death Rate by Cause
     getDeathRateByCause: (parent, args) => {
-      return axios.get(`https://data.cdc.gov/resource/p2s2-23ze.json?leading_causes=${args.cause}`)
+      return axios.get(`https://data.cdc.gov/resource/p2s2-23ze.json?leading_causes=${args.causeOfDeath}`)
       .then((response) => response.data)
       .catch((error) => console.log(error))
     },
@@ -180,7 +180,7 @@ const RESOLVERS = {
     },
     // Get Excess Deaths by Cause Of Death
     getExcessDeathsByCauseOfDeath: (parent, args) => {
-      return axios.get(`https://data.cdc.gov/resource/78p9-mpg4.json?cause_of_death=${args.cause_of_death}`)
+      return axios.get(`https://data.cdc.gov/resource/78p9-mpg4.json?cause_of_death=${args.causeOfDeath}`)
       .then((response) => response.data)
       .catch((error) => console.log(error))
     },
@@ -192,7 +192,7 @@ const RESOLVERS = {
     },
     // Get Excess Deaths by Age Range
     getExcessDeathsByAgeRange: (parent, args) => {
-      return axios.get(`https://data.cdc.gov/resource/78p9-mpg4.json?age_range=${args.age_range}`)
+      return axios.get(`https://data.cdc.gov/resource/78p9-mpg4.json?age_range=${args.ageRange}`)
       .then((response) => response.data)
       .catch((error) => console.log(error))
     },
@@ -204,13 +204,32 @@ const RESOLVERS = {
     },
 
 
+
     // CHRONIC DISEASE INDICATORS
     // https://data.cdc.gov/resource/g4ie-h725.json
     // https://data.cdc.gov/resource/g4ie-h725.json?locationdesc=California
 
 
+
+
+
     // TEEN BIRTH TRENDS
-    // https://data.cdc.gov/resource/sgfp-ytm5.json
+    // Get All Teen Births
+    getAllTeenBirths: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/sgfp-ytm5.json`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
+    getTeenBirthsByState: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/sgfp-ytm5.json?state=${args.state}`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
+    getTeenBirthsByYearRange: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/sgfp-ytm5.json?yearstart=${args.yearStart}?yearend=${args.yearEnd}`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
 
 
     // Births to Unmarried Women by Age Group
