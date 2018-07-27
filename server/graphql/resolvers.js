@@ -112,25 +112,25 @@ const RESOLVERS = {
       .catch((error) => console.log(error))
     },
     // Get Leading Causes of Death by Cause Name
-    getlLeadingCausesOfDeathByCauseName: (parent, args) => {
+    getLeadingCausesOfDeathByCauseName: (parent, args) => {
       return axios.get(`https://data.cdc.gov/resource/u4d7-xz8k.json?_cause_name=${args.causeName}`)
       .then((response) => response.data)
       .catch((error) => console.log(error))
     },
     // Get Leading Causes of Death by State
-    getlLeadingCausesOfDeathByState: (parent, args) => {
+    getLeadingCausesOfDeathByState: (parent, args) => {
       return axios.get(`https://data.cdc.gov/resource/u4d7-xz8k.json?state=${args.state}`)
       .then((response) => response.data)
       .catch((error) => console.log(error))
     },
     // Get Leading Causes of Death by Deaths
-    getlLeadingCausesOfDeathByDeaths: (parent, args) => {
+    getLeadingCausesOfDeathByDeaths: (parent, args) => {
       return axios.get(`https://data.cdc.gov/resource/u4d7-xz8k.json?deaths=${args.deaths}`)
       .then((response) => response.data)
       .catch((error) => console.log(error))
     },
     // Get Leading Causes of Death by Adjusted Death Rate
-    getlLeadingCausesOfDeathByAgeAdjustedDeathRate: (parent, args) => {
+    getLeadingCausesOfDeathByAgeAdjustedDeathRate: (parent, args) => {
       return axios.get(`https://data.cdc.gov/resource/u4d7-xz8k.json?${args.ageAdjustedDeathRate}`)
       .then((response) => response.data)
       .catch((error) => console.log(error))
@@ -138,9 +138,15 @@ const RESOLVERS = {
 
 
     // DEATH RATES (AGE ADJUSTED) FOR SELECT MAJOR CAUSES OF DEATH
+    // Get All Death Rates
+    getAllDeathRates: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/p2s2-23ze.json`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
     // Get Death Rate by Cause
-    getlDeathRateByCause: (parent, args) => {
-      return axios.get(` https://data.cdc.gov/resource/p2s2-23ze.json?leading_causes=${args.cause}`)
+    getDeathRateByCause: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/p2s2-23ze.json?leading_causes=${args.cause}`)
       .then((response) => response.data)
       .catch((error) => console.log(error))
     },
@@ -160,7 +166,42 @@ const RESOLVERS = {
 
 
     // POTENTIALLY EXCESS DEATHS FROM FIVE LEADING CAUSES OF DEATH
-    // https://data.cdc.gov/resource/78p9-mpg4.json
+    // Get All Excess Deaths
+    getAllExcessDeaths: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/78p9-mpg4.json`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
+    // Get Excess Deaths by Year
+    getExcessDeathsByYear: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/78p9-mpg4.json?year=${args.year}`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
+    // Get Excess Deaths by Cause Of Death
+    getExcessDeathsByCauseOfDeath: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/78p9-mpg4.json?cause_of_death=${args.cause_of_death}`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
+    // Get Excess Deaths by State
+    getExcessDeathsByState: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/78p9-mpg4.json?state=${args.state}`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
+    // Get Excess Deaths by Age Range
+    getExcessDeathsByAgeRange: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/78p9-mpg4.json?age_range=${args.age_range}`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
+    // Get Excess Deaths by Locality
+    getExcessDeathsByLocality: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/78p9-mpg4.json?locality=${args.locality}`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
 
 
     // CHRONIC DISEASE INDICATORS

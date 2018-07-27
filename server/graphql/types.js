@@ -20,10 +20,23 @@ const TYPEDEFS = `
     getAllLeadingCauseOfDeath: [LeadingCauseOfDeath]
     getLeadingCausesOfDeathByYear: [LeadingCauseOfDeath]
     getLeadingCausesOfDeathBy113CauseName: [LeadingCauseOfDeath]
-    getlLeadingCausesOfDeathByCauseName: [LeadingCauseOfDeath]
-    getlLeadingCausesOfDeathByState: [LeadingCauseOfDeath]
-    getlLeadingCausesOfDeathByDeaths: [LeadingCauseOfDeath]
-    getlLeadingCausesOfDeathByAgeAdjustedDeathRate: [LeadingCauseOfDeath]
+    getLeadingCausesOfDeathByCauseName: [LeadingCauseOfDeath]
+    getLeadingCausesOfDeathByState: [LeadingCauseOfDeath]
+    getLeadingCausesOfDeathByDeaths: [LeadingCauseOfDeath]
+    getLeadingCausesOfDeathByAgeAdjustedDeathRate: [LeadingCauseOfDeath]
+
+    getAllDeathRates: [DeathRate]
+    getDeathRateByCause: [DeathRate]
+    getlDeathRateByYear: [DeathRate]
+    getlDeathRateByAgeAdjustedDeathRate: [DeathRate]
+
+    getAllExcessDeaths: [ExcessDeath]
+    getExcessDeathsByYear: [ExcessDeath]
+    getExcessDeathsByCauseOfDeath: [ExcessDeath]
+    getExcessDeathsByState: [ExcessDeath]
+    getExcessDeathsByAgeRange: [ExcessDeath]
+    getExcessDeathsByLocality: [ExcessDeath]
+
 
   }
 
@@ -62,6 +75,31 @@ const TYPEDEFS = `
     state: String
     year: String
   }
+
+  type DeathRate {
+    age_adjusted_death_rate: String
+    leading_causes: String
+    year: String
+  }
+
+  type ExcessDeath {
+    age_range: String
+    benchmark: String
+    cause_of_death: String
+    expected_deaths: String
+    hhs_region: String
+    locality: String
+    observed_deaths: String
+    percent_potentially_excess_deaths: String
+    population: String
+    potentially_excess_deaths: String
+    state: String
+    state_fips_code: String
+    year: String
+  }
+
+
+
 `;
 
 
