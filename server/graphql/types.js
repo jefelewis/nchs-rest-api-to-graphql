@@ -51,6 +51,9 @@ const TYPEDEFS = `
     getAllChildhoodMortalityRates: [ChildhoodMortalityRate]
     getChildhoodMortalityRatesByYear(year: String): [ChildhoodMortalityRate]
     getChildhoodMortalityRatesByMortalityRate(mortalityRate: String): [ChildhoodMortalityRate]
+
+    getAllMonthlyDrugOverdoses: [DrugOverdose]
+    getMonthlyDrugOverdosesByState(state: String): [DrugOverdose]
   }
 
   type Death {
@@ -158,6 +161,18 @@ const TYPEDEFS = `
     age_at_death: String
     mortality_rate: String
     year: String
+  }
+
+  type DrugOverdose {
+    indicator: String
+    month: String
+    state_name: String
+    year: String
+    percent_pending_investigation: String
+    data_value: String
+    predicted_value: String
+    state: String
+    percent_complete: String
   }
 `;
 

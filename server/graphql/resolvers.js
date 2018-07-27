@@ -233,6 +233,24 @@ const RESOLVERS = {
 
 
 
+    // TOBACCO USE
+    // Get All Tobacco Use
+    getAllTobaccoUse: (parent, args) => {
+      return axios.get(`https://chronicdata.cdc.gov/resource/tte2-2m3r.json`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
+
+    // https://chronicdata.cdc.gov/resource/ctsr-mgbv.json
+
+
+
+
+
+
+
+
+
     // TEEN BIRTH TRENDS
     // Get All Teen Births
     getAllTeenBirths: (parent, args) => {
@@ -284,6 +302,51 @@ const RESOLVERS = {
     },
 
 
+
+    // DRUG OVERDOESES
+    // Get All Drug Overdoses
+    getAllMonthlyDrugOverdoses: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/xkb8-kh2a.json`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
+    // Get Drug Overdoses By State
+    getMonthlyDrugOverdoses: (parent, args) => {
+    return axios.get(`https://data.cdc.gov/resource/xkb8-kh2a.json?state=${args.state}`)
+    .then((response) => response.data)
+    .catch((error) => console.log(error))
+    },
+
+
+
+
+
+    // Public Heath
+    // https://chronicdata.cdc.gov/resource/csmm-fdhi.json
+
+
+    // CARDIOVASCULAR DISEASE
+    // https://chronicdata.cdc.gov/resource/sjad-c2fj.json
+
+
+    // OBESITY
+    // https://chronicdata.cdc.gov/resource/cwdv-83mi.json
+
+
+
+
+
+
+    // https://chronicdata.cdc.gov/resource/hn4x-zwk7
+    // https://chronicdata.cdc.gov/resource/hn4x-zwk7.json?locationdesc=California
+
+
+
+    // SMOKING
+    // https://chronicdata.cdc.gov/resource/xgm7-83i9.json
+
+    // 
+    // https://chronicdata.cdc.gov/resource/gfhd-2f5y.json
 
   }
 }
