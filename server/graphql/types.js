@@ -43,6 +43,9 @@ const TYPEDEFS = `
 
     getAllUnmarriedBirths: [UnmarriedBirth]
 
+    getAllChildhoodMortalityRates: [ChildhoodMortalityRate]
+    getChildhoodMortalityRatesByYear(year: String): [ChildhoodMortalityRate]
+    getChildhoodMortalityRatesByMortalityRate(mortalityRate: String): [ChildhoodMortalityRate]
   }
 
   type Death {

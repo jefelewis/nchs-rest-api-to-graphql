@@ -245,9 +245,23 @@ const RESOLVERS = {
 
     // CHILDHOOD MORTALITY RATES
     // Get All Childhood Mortality Rates
-    // https://data.cdc.gov/resource/uumi-wks2.json
-
-
+    getAllChildhoodMortalityRates: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/uumi-wks2.json`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
+    // Get Childhood Mortality Rates By Year
+    getChildhoodMortalityRatesByYear: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/uumi-wks2.json?year=${args.year}`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
+    // Get Childhood Mortality Rates By Mortality Rate
+    getChildhoodMortalityRatesByMortalityRate: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/uumi-wks2.json?mortality_rate=${args.mortalityRate}`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
   }
 }
 
