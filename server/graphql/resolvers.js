@@ -363,6 +363,12 @@ const RESOLVERS = {
     // 
     // https://chronicdata.cdc.gov/resource/gfhd-2f5y.json
 
+
+
+    // BIRTHS/FERTILITY RATES
+    // https://data.cdc.gov/resource/tndt-s2gv.json
+
+
   }
 }
 
