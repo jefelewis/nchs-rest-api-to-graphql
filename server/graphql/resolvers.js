@@ -244,8 +244,23 @@ const RESOLVERS = {
     // https://chronicdata.cdc.gov/resource/ctsr-mgbv.json
 
 
-
-
+    // SMOKING
+    //
+    getAllSmokingUse: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/syfb-fzcd.json`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
+    getSmokingUseByState: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/syfb-fzcd.json?locationdesc=${args.state}`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
+    getSmokingUseByYear: (parent, args) => {
+      return axios.get(`https://data.cdc.gov/resource/syfb-fzcd.json?year=${args.year}`)
+      .then((response) => response.data)
+      .catch((error) => console.log(error))
+    },
 
 
 

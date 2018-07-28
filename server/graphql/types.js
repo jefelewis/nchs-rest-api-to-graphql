@@ -42,6 +42,10 @@ const TYPEDEFS = `
     getAlcoholBingeDrinkingByRaceEthnicty: [AlcoholBingeDrinking]
     getAlcoholBingeDrinkingByState(stateAbbreviation: String): [AlcoholBingeDrinking]
 
+    getAllSmokingUse: [SmokingUse]
+    getSmokingUseByState(state: String): [SmokingUse]
+    getSmokingUseByYear(year: String): [SmokingUse]
+
     getAllTeenBirths: [TeenBirth]
     getTeenBirthsByState(state: String): [TeenBirth]
     getTeenBirthsByYearRange(yearStart: String yearEnd: String): [TeenBirth]
@@ -138,6 +142,43 @@ const TYPEDEFS = `
     locationid: String
     topic: String
     yearstart: String
+  }
+
+  type SmokingUse {
+    measuredesc: String
+    education: String
+    gender: String
+    stratificationid1: String
+    year: String
+    stratificationid2: String
+    stratificationid3: String
+    stratificationid4: String
+    locationdesc: String
+    data_value_unit: String
+    topicid: String
+    sample_size: String
+    data_value_std_err: String
+    topictypeid: String
+    low_confidence_limit: String
+    topictype: String
+    measureid: String
+    race: String
+    locationabbr: String
+    high_confidence_limit: String
+    data_value_type: String
+    displayorder: String
+    topicdesc: String
+    submeasureid: String
+    datasource: String
+    data_value: String
+    age: String
+    geolocation: Geolocation
+  }
+    
+  type Geolcation {      
+    latitude: String
+    needs_recoding: Boolean
+    longitude: String
   }
 
   type TeenBirth {
