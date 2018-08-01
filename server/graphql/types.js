@@ -1,5 +1,9 @@
+// Imports: GraphQL
+import { gql } from 'apollo-server-express';
+
+
 // GraphQL: TypeDefs
-const TYPEDEFS = `
+const TYPEDEFS = gql`
 
   type Query {
     getDeathsByFalling: [Death]
@@ -23,7 +27,7 @@ const TYPEDEFS = `
     getLeadingCausesOfDeathByCauseName(causeOfDeath: String): [LeadingCauseOfDeath]
     getLeadingCausesOfDeathByState(state: String): [LeadingCauseOfDeath]
     getLeadingCausesOfDeathByDeaths(deaths: String): [LeadingCauseOfDeath]
-    getLeadingCausesOfDeathByAgeAdjustedDeathRate(String: ageAdjustedDeathRate): [LeadingCauseOfDeath]
+    getLeadingCausesOfDeathByAgeAdjustedDeathRate(ageAdjustedDeathRate: String): [LeadingCauseOfDeath]
 
     getAllDeathRates: [DeathRate]
     getDeathRateByCause(causeOfDeath: String): [DeathRate]
@@ -87,7 +91,7 @@ const TYPEDEFS = `
     year: String
   }
 
-  LeadingCauseOfDeath {
+  type LeadingCauseOfDeath {
     _113_cause_name: String
     aadr: String
     cause_name: String
@@ -175,7 +179,7 @@ const TYPEDEFS = `
     geolocation: Geolocation
   }
     
-  type Geolcation {      
+  type Geolocation {      
     latitude: String
     needs_recoding: Boolean
     longitude: String

@@ -9,8 +9,15 @@ const RESOLVERS = {
     // DEATHS
     // Get Deaths by Falling
     getDeathsByFalling: (parent, args) => {
-      return axios.get(`https://data.cdc.gov/resource/6j4j-ispt.json?injury_mechanism=Fall`)
-      .then((response) => response.data)
+      axios.get(`https://data.cdc.gov/resource/6j4j-ispt.json?injury_mechanism=Fall`)
+      // Return Response
+      .then((response) => {
+        return response.data
+      })
+      // Write to database
+      .then((response) => {
+        
+      })
       .catch((error) => console.log(error))
     },
     // Get Deaths by Drowning
@@ -233,13 +240,13 @@ const RESOLVERS = {
 
 
 
-    // TOBACCO USE
-    // Get All Tobacco Use
-    getAllTobaccoUse: (parent, args) => {
-      return axios.get(`https://chronicdata.cdc.gov/resource/tte2-2m3r.json`)
-      .then((response) => response.data)
-      .catch((error) => console.log(error))
-    },
+    // // TOBACCO USE
+    // // Get All Tobacco Use
+    // getAllTobaccoUse: (parent, args) => {
+    //   return axios.get(`https://chronicdata.cdc.gov/resource/tte2-2m3r.json`)
+    //   .then((response) => response.data)
+    //   .catch((error) => console.log(error))
+    // },
 
     // https://chronicdata.cdc.gov/resource/ctsr-mgbv.json
 
@@ -318,19 +325,19 @@ const RESOLVERS = {
 
 
 
-    // DRUG OVERDOESES
-    // Get All Drug Overdoses
-    getAllMonthlyDrugOverdoses: (parent, args) => {
-      return axios.get(`https://data.cdc.gov/resource/xkb8-kh2a.json`)
-      .then((response) => response.data)
-      .catch((error) => console.log(error))
-    },
-    // Get Drug Overdoses By State
-    getMonthlyDrugOverdoses: (parent, args) => {
-    return axios.get(`https://data.cdc.gov/resource/xkb8-kh2a.json?state=${args.state}`)
-    .then((response) => response.data)
-    .catch((error) => console.log(error))
-    },
+    // // DRUG OVERDOESES
+    // // Get All Drug Overdoses
+    // getAllMonthlyDrugOverdoses: (parent, args) => {
+    //   return axios.get(`https://data.cdc.gov/resource/xkb8-kh2a.json`)
+    //   .then((response) => response.data)
+    //   .catch((error) => console.log(error))
+    // },
+    // // Get Drug Overdoses By State
+    // getMonthlyDrugOverdoses: (parent, args) => {
+    // return axios.get(`https://data.cdc.gov/resource/xkb8-kh2a.json?state=${args.state}`)
+    // .then((response) => response.data)
+    // .catch((error) => console.log(error))
+    // },
 
 
 
